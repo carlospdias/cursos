@@ -23,5 +23,4 @@ A execução pode ser feita de 2 formas. Se tiver o  *Python 3.6+* instalado, ba
 ```sh
 $ python -m http.server
 ```
-Ou então a partir da URL:
-
+Ou então a partir da URL: https://filmes-aleatorios.glitch.me/
