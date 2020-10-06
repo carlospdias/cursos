@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Conversor de Moedas</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous" />
+        <link rel="stylesheet" href="index.css" />
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="grid-container">
+            <div class="grid-x grid-padding-x grid-margin-x">
+
+                <h3 class="cell">Filmes Aleatórios</h3>
+                
+                <div class="cell callout">
+                 Essa é uma aplicação que  busca recomendar o que de melhor o cinema produziu nos últimos 50 anos.
+                        Suas indicações, totalmente aleatórias, são fornecidas por uma base de dados alimentada por uma curadoria de verdadeiros fãs de cinema.
+                
+                </div>
+
+                <div class="cell card">
+                <div class="media-object stack-for-small">
+                    <div class="media-object-section">
+                      <div class="thumbnail movie-thumbnail">
+                        <img  src="" id="cartaz"/> 
+                      </div>
+                    </div>
+                    <div class="media-object-section">
+                      <h4 id="titulo"></h4>
+                      <p id="producao"></p>
+                      <p id="duracao"></p>
+                    
+                    </div>
+                  </div>
+                  <label id="lbl-percent"></label>
+                  <meter  id="percent" value="0" min="0" max="10" class="hidden" optimum="1"></meter>
+                 
+                <hr />
+            </div>
+            
+            </div>
+            
+            <button class="button" id="btn-selecionar-filme">Indicação</button>
+           
+        </div>
+
+        <script src="db.json.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>
