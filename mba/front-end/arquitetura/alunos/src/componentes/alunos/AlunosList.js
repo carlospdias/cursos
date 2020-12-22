@@ -1,27 +1,41 @@
-import React from 'react';
+import {useState} from 'react';
 
+/*function alunos(){
 
-function alunos(){
   let alunos = [];
-  alunos.push({'nome':'Edite Santana', 'nascimento':'15/05/2005'});
-  alunos.push({'nome':'Eisabel Gordim', 'nascimento':'15/05/2005'});
-  alunos.push({'nome':'Tâmara Vergueiro', 'nascimento':'15/05/2005'});
-  alunos.push({'nome':'Sandra Linhares', 'nascimento':'17/10/1980'});
-  alunos.push({'nome':'Penelope Vieira', 'nascimento':'07/02/1995'});
-  alunos.push({'nome':'Janimete Okahara', 'nascimento':'02/05/2010'});
+  alunos.push({'nome':'Edite Santana', 'id' : Date.now()});
 
   return alunos;
-}
+}*/
 
-function AlunosList(props) {
+const AlunosList=(props)=> {
+    const [nome,setNome] = useState('');
+    const [alunos, setAlunos] = useState([]);
+
+    const handleNameSetter=(e)=>{
+        setNome(e.target.value);
+    }
+    const handleClickButton=(e)=>{
+        setAlunos(previous=>[...previous,{id:Date.now(),nome}]);
+    }
+    const handleDeleteNome=(id)=>{
+        //setAlunos(previous=>[...previous,{id:Date.now(),nome}]);
+        setAlunos(previous=>previous.filter(aluno=>aluno.id!==id));
+    }
+
     return (
+     <>
+     <label>Nome<input type="text" size="40" maxLength="35" required onChange={handleNameSetter} /></label>
+      <button className="button primary"  onClick={handleClickButton}>Gravar</button>
       <div className="card">
         <ul className="no-bullet">
-        {alunos().map((aluno, idx)=>{
-          return <li id="{idx}">{aluno.nome}-{aluno.nascimento}</li>
+
+        {alunos.map((aluno, idx)=>{
+          return <li key={aluno.id}>{aluno.nome} <button className="button warning" onClick={()=>handleDeleteNome(aluno.id)}>x</button> </li>
         })}
         </ul>
       </div>
+      </>
     );
   }
   
