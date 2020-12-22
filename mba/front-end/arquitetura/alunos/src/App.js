@@ -6,7 +6,7 @@ function App() {
   return (
     <div class="grid-x grid-margin-x grid-padding-x">
        <div className="cell">
-        <div className="card-image float-center">
+        <div className="card-image align-center">
             <div className="card-divider">
                 <h3>Alunos</h3>
             </div>
